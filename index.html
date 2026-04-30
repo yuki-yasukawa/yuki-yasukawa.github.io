@@ -144,6 +144,66 @@
         @media (max-width: 600px) {
             .nav-links { display: none; } /* スマホではリンクを隠す（簡易版） */
         }
+
+        /* スライダー全体のコンテナ */
+        .slider-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* スライドの重なり */
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            aspect-ratio: 16 / 9; /* 横向きの黄金比 */
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画像を枠いっぱいに綺麗に収める */
+        }
+
+        /* スライド内のキャプション（文字） */
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 80, 136, 0.7); /* メインカラーの半透明 */
+            color: white;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* 前後ボタン */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            z-index: 10;
+            color: var(--main-color);
+        }
+
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
     </style>
 </head>
 <body>
@@ -162,6 +222,29 @@
         <h1>安川 雄揮</h1>
         <p class="affiliation">大阪大学大学院 情報科学研究科<br>小泉研究室</p>
     </header>
+
+    <div class="slider-container">
+        <div class="slider-wrapper" id="slider">
+            <!-- スライド1: 研究 -->
+            <div class="slide">
+                <img src="images/hokkaido.jpg" alt="北海道旅行">
+                <div class="slide-caption">北海道旅行中に撮影</div>
+            </div>
+            <!-- スライド2: 大学祭 -->
+            <div class="slide">
+                <img src="images/nagano.jpg" alt="帰省先">
+                <div class="slide-caption">帰省先である長野県で撮影した写真</div>
+            </div>
+            <!-- スライド3: サッカー（パナスタ） -->
+            <div class="slide">
+                <img src="images/yamaga.jpg" alt="サッカー観戦">
+                <div class="slide-caption">松本山雅のホームスタジアムで撮影</div>
+            </div>
+        </div>
+        <!-- 前後ボタン -->
+        <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
 
     <section id="about">
         <h2>About & Career</h2>
@@ -248,5 +331,19 @@
         &copy; 2026 Yuki Yasukawa. Built with GitHub Pages.
     </footer>
 
+    <script>
+        let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        // 5秒ごとに自動でスライドさせる（お好みで）
+        setInterval(() => moveSlide(1), 5000);
+    </script>
 </body>
 </html>

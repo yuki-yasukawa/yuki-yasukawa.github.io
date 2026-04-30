@@ -148,12 +148,20 @@
         /* スライダー全体のコンテナ */
         .slider-container {
             width: 100%;
-            max-width: 900px;
-            margin: 2rem auto;
+            max-width: 600px; /* ★900pxから600pxに縮小（ここでお好みのサイズに！） */
+            margin: 1.5rem auto; /* 上下の余白も少し詰めました */
             overflow: hidden;
             position: relative;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* スライド */
+        .slide {
+            min-width: 100%;
+            /* ★比率を変更。21 / 9 にすると、より横長（シネマスコープ風）になって高さを抑えられます */
+            aspect-ratio: 21 / 9; 
+            position: relative;
         }
 
         /* スライドの重なり */
@@ -162,11 +170,6 @@
             transition: transform 0.5s ease-in-out;
         }
 
-        .slide {
-            min-width: 100%;
-            aspect-ratio: 16 / 9; /* 横向きの黄金比 */
-            position: relative;
-        }
 
         .slide img {
             width: 100%;

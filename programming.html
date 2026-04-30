@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プログラミングスキル詳細 | 安川 雄揮</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --main-color: #005088; --bg-color: #f8fafc; --text-color: #334155; }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; margin: 0; }
+        nav { background: #fff; padding: 1rem 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .back-link { text-decoration: none; color: var(--main-color); font-weight: 600; }
+        section { padding: 4rem 2rem; max-width: 850px; margin: 0 auto; }
+        h1 { color: var(--main-color); font-size: 2rem; margin-bottom: 2rem; }
+        h2 { font-size: 1.5rem; color: var(--main-color); border-bottom: 2px solid var(--main-color); padding-bottom: 0.5rem; margin-top: 3rem; }
+        .lang-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-top: 1.5rem; border-left: 5px solid var(--main-color); }
+        .lang-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .lang-name { font-size: 1.4rem; font-weight: 700; color: var(--main-color); }
+        .scale-tag { background: #e2e8f0; padding: 0.2rem 0.8rem; border-radius: 99px; font-size: 0.85rem; font-weight: 600; }
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.8rem; }
+        .code-focus { color: #005088; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-link">← ホームへ戻る</a>
+    </nav>
+
+    <section>
+        <h1>Programming Skills</h1>
+        <p>研究および大学の講義を通じて、低レイヤーからアプリケーション層まで幅広い開発経験を積んでいます。特に計算機システムの内部構造を理解するためのフルスクラッチ開発に注力してきました。</p>
+
+        <!-- C言語 -->
+        <div class="lang-box">
+            <div class="lang-header">
+                <span class="lang-name">C / C++</span>
+                <span class="scale-tag">研究・講義実装</span>
+            </div>
+            <p><span class="code-focus">用途：次世代ネットワークプロトコルの実装、システムプログラミング</span></p>
+            <ul>
+                <li><strong>独自ターミナルの作成（約2,000行）:</strong> 大学の講義にて、シェル（ターミナル）をC言語でフルスクラッチ開発。プロセス管理（fork/exec）、パイプ処理、リダイレクション、シグナルハンドリング等のシステムコールを深く理解しました。</li>
+                <li><strong>研究利用:</strong> SmartNICやDPDKを用いたパケット処理エンジンの開発において、メモリ管理やポインタ操作を駆使したパフォーマンス最適化を行っています。</li>
+            </ul>
+        </div>
+
+        <!-- Java -->
+        <div class="lang-box">
+            <div class="lang-header">
+                <span class="lang-name">Java</span>
+                <span class="scale-tag">講義実装</span>
+            </div>
+            <p><span class="code-focus">用途：言語処理系の理解、オブジェクト指向開発</span></p>
+            <ul>
+                <li><strong>コンパイラの作成（約2,000行）:</strong> 独自のプログラミング言語をターゲットとしたコンパイラをJavaで実装。字句解析、構文解析、抽象構文木（AST）の構築、およびスタックマシン向けの中間コード生成までの一連の流れを習得しました。</li>
+                <li><strong>オブジェクト指向の習得:</strong> 大規模なコードを保守性高く設計するためのデザインパターンやクラス設計の基礎を実践しました。</li>
+            </ul>
+        </div>
+        
+        
+
+        <!-- Python -->
+        <div class="lang-box">
+            <div class="lang-header">
+                <span class="lang-name">Python</span>
+                <span class="scale-tag">研究・データ分析</span>
+            </div>
+            <p><span class="code-focus">用途：研究支援ツール開発、統計処理、自動化</span></p>
+            <ul>
+                <li><strong>パケット生成・検証ツールの開発（約500行）:</strong> Scapy等のライブラリを活用し、研究対象のプロトコル変換をテストするためのパケット生成スクリプトを構築。</li>
+                <li><strong>統計処理・可視化:</strong> 実験結果（スループットや遅延）のログを解析し、MatplotlibやSeabornを用いたグラフ作成、および統計的な評価に活用しています。</li>
+                <li><strong>LLM活用:</strong> APIを通じたLLMの組み込みや、定型業務の自動化スクリプト作成など、開発効率向上のために常用しています。</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem;">
+        &copy; 2026 Yuki Yasukawa.
+    </footer>
+
+</body>
+</html>

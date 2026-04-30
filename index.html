@@ -65,20 +65,36 @@
             color: var(--main-color);
         }
 
-        /* ヘッダーを豪華に */
+        /* 1. ヘッダー全体：背景画像を設定 */
         .profile-header {
             text-align: center;
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-            margin-bottom: 2rem;
+            padding: 10rem 2rem; /* 高さを出して画像を見せる */
+            /* 画像の上に半透明の黒を重ねて、白い文字を読みやすくします */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/sea.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* スクロール時に画像が固定されるオシャレ効果 */
+            color: #ffffff;
+            margin-bottom: 0;
+            border-bottom: none;
         }
 
+        /* 2. 名前：白文字にして影をつける */
         .profile-header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
-            color: var(--main-color);
-            letter-spacing: 0.1em;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: #ffffff; 
+            letter-spacing: 0.15em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* 影を強くして視認性を確保 */
+        }
+
+        /* 3. 所属：白文字にして少し透けさせる */
+        .affiliation {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
         }
 
         /* セクション共通 */
@@ -117,12 +133,13 @@
         /* スライダー調整 */
         .slider-container {
             width: 100%;
-            max-width: 750px;
-            margin: -3rem auto 4rem; /* ヘッダーに少し食い込ませるオシャレ配置 */
+            max-width: 650px;
+            /* 画像の下に少し重なるように配置（-4rem）するとモダンになります */
+            margin: -4rem auto 4rem; 
             overflow: hidden;
             position: relative;
             border-radius: 15px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
             z-index: 10;
         }
 

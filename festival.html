@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大学祭実行委員会での活動 | 安川 雄揮</title>
+    <title>大学祭実行委員会での活動詳細 | 安川 雄揮</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* トップページと同じスタイルを流用 */
         :root { --main-color: #005088; --bg-color: #f8fafc; --text-color: #334155; }
         body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; margin: 0; }
         nav { background: #fff; padding: 1rem 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .back-link { text-decoration: none; color: var(--main-color); font-weight: 600; }
-        section { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+        section { padding: 4rem 2rem; max-width: 850px; margin: 0 auto; }
         h1 { color: var(--main-color); font-size: 2rem; margin-bottom: 0.5rem; }
         h2 { font-size: 1.5rem; color: var(--main-color); border-bottom: 2px solid var(--main-color); padding-bottom: 0.5rem; margin-top: 3rem; }
+        h3 { font-size: 1.2rem; color: var(--main-color); margin-top: 2rem; }
         .tag { display: inline-block; background: #e2e8f0; padding: 0.2rem 0.8rem; border-radius: 99px; font-size: 0.8rem; margin-right: 0.5rem; }
-        .highlight-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-top: 1rem; }
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.5rem; }
+        .highlight-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-top: 1rem; border-left: 4px solid var(--main-color); }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -27,39 +27,46 @@
     </nav>
 
     <section>
-        <p style="color: #64748b; font-weight: 600; margin-bottom: 0;">2022年 - 2025年</p>
-        <h1>大阪大学祭実行委員会でのシステム改革</h1>
+        <h1>大阪大学祭実行委員会での活動</h1>
+        <p style="color: #64748b; font-weight: 600;">2022年 - 2025年 | シフト管理部署 ＆ システム管理部署</p>
         <div style="margin-bottom: 2rem;">
-            <span class="tag">組織運営</span>
+            <span class="tag">組織マネジメント</span>
+            <span class="tag">MySQL</span>
             <span class="tag">Excel VBA</span>
-            <span class="tag">業務効率化</span>
+            <span class="tag">交渉・調整</span>
         </div>
 
-        <p>大阪大学の二大祭（いちょう祭・まちかね祭）を運営する「大学祭実行委員会」にて、スタッフのシフト管理とシステム運用を担当しました。200人規模の組織における「手作業によるミス」を技術で解決した経験を紹介します。</p>
+        <p>日本最大級の学園祭を運営する組織において、2つの専門部署を兼任。200人のスタッフマネジメントから、1万人規模のデータを支えるシステム運用まで、多角的に組織を支えました。</p>
 
-        <h2>直面していた課題</h2>
+        <h2>1. シフト管理部署：データに基づく最適化と交渉</h2>
         <div class="highlight-box">
-            <ul>
-                <li><strong>膨大な手作業:</strong> 200人以上のスタッフのシフトをExcelで管理していたが、集計やエラーチェックがすべて目視だった。</li>
-                <li><strong>特殊なフォーマット:</strong> シフト表が「結合セル」を多用した複雑な形式で、標準機能の集計が困難だった。</li>
-                <li><strong>ヒューマンエラー:</strong> 拘束時間の計算ミスや、重複配置などのチェック漏れが頻発していた。</li>
-            </ul>
+            <h3>現場ニーズに即した「シフト管理システム」の構築</h3>
+            <p>現場の運用フローを徹底的にヒアリングし、VBAを用いた独自の管理システムを導入。結合セルが多用される複雑なシフト表から、ボタン一つで「実働時間の算出」「二重配置の検知」を行う機能を実装し、手作業によるミスを根絶しました。</p>
+            
+            <h3>リソース不足の解消と他部署交渉</h3>
+            <p>人員不足という課題に対し、感情論ではなくデータに基づいた解決を図りました。全部署の動員状況を可視化・分析し、「どの地点の人数を削減できるか」という根拠を持って他部署と交渉を実施。組織全体での最適な人員配置を実現しました。</p>
         </div>
 
-        <h2>解決策：VBAによる管理ツールの構築</h2>
-        <p>完全な自動割り当てではなく、<strong>「人間が組んだシフトを、即座に、正確に検証・カウントする」</strong>ためのVBAマクロを独学で構築しました。</p>
+        <h2>2. システム管理部署：大規模インフラの重要性の痛感</h2>
         <div class="highlight-box">
-            <h3>実装した主な機能</h3>
-            <ul>
-                <li><strong>結合セルのカウント対応:</strong> 複雑に結合されたセルの中から、スタッフごとの実働時間を正確に抽出するアルゴリズムの実装。</li>
-                <li><strong>リアルタイム・エラー検知:</strong> 規定時間を超えた労働や、同一人物の二重配置をボタン一つでリストアップ。</li>
-                <li><strong>シフト分析ダッシュボード:</strong> 各時間帯の人数不足を可視化し、人員配置の最適化をサポート。</li>
-            </ul>
+            <h3>1万人規模のデータベース運用</h3>
+            <p>参加団体やスタッフなど、約1万人規模のデータを管理。MySQLを用いて、必要な情報を迅速に抽出・提供する役割を担いました。大規模な組織において、データの正確性がどれほど運営の安定に直結するかを実体験しました。</p>
+            
+            <h3>システムの社会的責任の理解</h3>
+            <p>数万人が来場するイベントの基盤を支える中で、システムの停止が組織全体に与える影響の大きさを学びました。これが、現在取り組んでいる「高信頼・低遅延なネットワーク研究」への興味の原点にもなっています。</p>
         </div>
 
-        <h2>成果と学び</h2>
-        <p>このツールの導入により、従来数時間かかっていたチェック作業を<strong>数分に短縮</strong>。人的ミスをほぼゼロに抑えることができました。</p>
-        <p>この経験から、<strong>「技術を手段として、目の前の組織が抱える課題を具体的に解決する面白さ」</strong>を知り、将来もITを活用して社会に貢献したいと考える原点となりました。</p>
+        <h2>この経験から得た強み</h2>
+        <div class="grid">
+            <div class="highlight-box">
+                <strong>プロジェクト遂行力</strong>
+                <p>技術を「作る」だけでなく、現場の課題を特定し、周囲と交渉して「運用に乗せる」までのプロセスを完遂できます。</p>
+            </div>
+            <div class="highlight-box">
+                <strong>大規模データへの意識</strong>
+                <p>1万人規模のDB操作を通じ、常に「スケーラビリティ」と「安定性」を意識したシステム設計の重要性を理解しています。</p>
+            </div>
+        </div>
 
     </section>
 

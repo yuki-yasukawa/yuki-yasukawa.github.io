@@ -169,6 +169,21 @@
             border-color: var(--main-color);
         }
 
+        /* カード内のタイトルだけを青く、太くする設定 */
+        .skill-card h3 {
+            color: var(--main-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        /* 説明文はデフォルトの色に戻す */
+        .skill-card p {
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+
         /* スライダー調整 */
         .slider-container {
             width: 100%;
@@ -399,31 +414,27 @@
 
     <section id="skills">
         <h2>Skills</h2>
-        
         <div class="skill-grid">
-            <!-- Backend / Systems: タイトルにリンクを設定 -->
-            <div class="skill-card" style="font-weight: 700; font-size: 1.1rem; color: var(--main-color);">
+            <div class="skill-card"> <!-- styleを削除 -->
                 <h3>
                     <a href="programming.html" style="text-decoration: none; color: inherit; display: block;">
-                        Backend / Systems <span style="font-size: 0.8rem; color: var(--main-color); vertical-align: middle;">(詳細はこちら)</span>
+                        Backend / Systems <span style="font-size: 0.8rem; vertical-align: middle;">(詳細はこちら)</span>
                     </a>
                 </h3>
                 <p>C, Java, Python</p>
-                <p>研究や学校の授業で使用しています。</p>
+                <p>研究や大学の講義で使用。次世代プロトコルの実装や低レイヤーでの性能最適化に取り組んでいます。</p>
             </div>
 
-            <!-- Database / Tools -->
-            <div class="skill-card" style="font-weight: 700; font-size: 1.1rem; color: var(--main-color);">
+            <div class="skill-card"> <!-- styleを削除 -->
                 <h3>Database / Tools</h3>
                 <p>MySQL, SQL, Git, VBA, Linux, DPDK</p>
-                <p>大学祭での活動に使用 (VBA, MySQL) しました。研究での活動ではDPDKを用いた環境の構築を行いました。Git・Linux等は日常的に使用しています。</p>
+                <p>大学祭での200人規模のシフト管理ツール構築（VBA）や、DPDKを用いた研究環境の構築実績があります。</p>
             </div>
 
-            <!-- Language / Certification -->
-            <div class="skill-card" style="font-weight: 700; font-size: 1.1rem; color: var(--main-color);">
+            <div class="skill-card"> <!-- styleを削除 -->
                 <h3>Language / Certification</h3>
                 <p><strong>TOEIC L&R: 780点</strong></p>
-                <p>英語による技術仕様書の読解、最新論文の調査に活用。</p>
+                <p>英語による技術仕様書の読解、最新論文の調査に活用しています。</p>
             </div>
         </div>
     </section>
@@ -431,24 +442,26 @@
     <section id="hobbies">
         <h2>Hobbies & Interests</h2>
         <div class="skill-grid">
-            <div class="skill-card" style="font-weight: 700; font-size: 1.1rem; color: var(--main-color);">
-                <h3><i class="fas fa-film"></i> 映画鑑賞</h3>
-                <p>最近のヒットは映画『爆弾』。緊迫感のある展開に圧倒されました。</p>
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 10px;">
-                    <!-- src の中身を /embed/動画ID に変更します -->
+            <!-- 映画鑑賞 -->
+            <div class="skill-card">
+                <h3><i class="fas fa-film"></i> Movie</h3>
+                <p>最近のヒットは映画『爆弾』。緻密なストーリーと緊迫感のある展開に圧倒されました。論理的なプロットを考察しながら鑑賞するのが好きです。</p>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 10px; border-radius: 8px;">
                     <iframe src="https://www.youtube.com/embed/JfrdFP0I7DQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
                 </div>
-                <p style="font-size: 0.8rem; margin-top: 5px;"><a href="https://www.youtube.com/watch?v=JfrdFP0I7DQ" target="_blank">YouTubeで見る</a></p>
+                <p style="font-size: 0.8rem; margin-top: 5px;"><a href="https://www.youtube.com/watch?v=JfrdFP0I7DQ" target="_blank" style="color: var(--main-color);">YouTubeで予告編を見る</a></p>
             </div>
 
-            <div class="skill-card" style="font-weight: 700; font-size: 1.1rem; color: var(--main-color);">
-                <h3><i class="fas fa-hot-tub"></i> サウナ・温泉</h3>
-                <p>長野県出身ということもあり、温泉がライフワークです。サウナで鍛えた「忍耐力」は、研究やデバッグ作業の粘り強さにも活きています（笑）。</p>
+            <!-- サウナ・温泉 -->
+            <div class="skill-card">
+                <h3><i class="fas fa-hot-tub"></i> Sauna & Onsen</h3>
+                <p>長野県出身ということもあり、温泉巡りはライフワークです。サウナでリフレッシュする時間も大切にしており、そこで培った「粘り強さ」は研究のデバッグ作業にも活きています。</p>
             </div>
 
-            <div class="skill-card" style="font-weight: 700; font-size: 1.1rem; color: var(--main-color);">
-                <h3><i class="fas fa-futbol"></i> サッカー観戦</h3>
-                <p>現在、パナソニックスタジアム吹田から徒歩圏内に居住中。週末にスタジアムから聞こえてくる歓声を感じながら、地元の熱量に刺激をもらっています。</p>
+            <!-- サッカー観戦 -->
+            <div class="skill-card">
+                <h3><i class="fas fa-futbol"></i> Soccer</h3>
+                <p>現在はパナソニックスタジアム吹田から徒歩圏内に居住しています。週末にスタジアムから聞こえてくる歓声を感じながら、地元の熱量に刺激をもらうのが週末の楽しみです。</p>
             </div>
         </div>
     </section>

@@ -34,41 +34,47 @@
 
         /* ナビゲーション */
         nav {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px); /* すりガラス効果 */
-            padding: 1rem 2rem;
+            background: transparent; /* 背景を透明に */
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: absolute; /* 写真の上に配置 */
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-            box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+            box-shadow: none; /* 影を消して一体化 */
         }
 
+        /* ロゴとリンクの文字色を白に変更 */
         .nav-logo {
             font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--main-color);
+            font-size: 1.4rem;
+            color: #ffffff; /* 白文字 */
             letter-spacing: 0.05em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* 視認性を上げるための影 */
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-color);
-            font-size: 0.9rem;
+            color: #ffffff; /* 白文字 */
+            font-size: 1rem;
             font-weight: 600;
-            transition: color 0.3s;
+            margin-left: 20px;
+            transition: opacity 0.3s;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .nav-links a:hover {
-            color: var(--main-color);
+            opacity: 0.7;
+            color: #ffffff;
         }
 
         /* 1. ヘッダー全体：背景画像を設定 */
         .profile-header {
             text-align: center;
-            padding: 10rem 2rem; /* 高さを出して画像を見せる */
+            padding: 12rem 2rem 8rem; /* 高さを出して画像を見せる */
             /* 画像の上に半透明の黒を重ねて、白い文字を読みやすくします */
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/sea.jpg');
             background-size: cover;
@@ -229,7 +235,8 @@
     <nav>
         <div class="nav-logo">Yuki Yasukawa</div>
         <div class="nav-links">
-            <a href="#education">Education</a> <!-- ここを追加 -->
+            <!-- リンクの順番を整理 -->
+            <a href="#education">Education</a>
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#skills">Skills</a>

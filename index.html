@@ -34,17 +34,44 @@
 
         /* ナビゲーション */
         nav {
-            background: rgba(255, 255, 255, 0.1); /* ほんの少し白を混ぜて高級感を */
-            backdrop-filter: blur(8px); /* すりガラス効果 */
-            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed; /* スクロールしてもついてくるように変更 */
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            box-sizing: border-box;
+            transition: all 0.4s ease; /* 変化をなめらかに */
+            background: transparent; 
+        }
+
+        /* スクロールした後のスタイル：半透明の白（すりガラス） */
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.8); /* 半透明の白 */
+            backdrop-filter: blur(10px); /* すりガラス効果 */
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem; /* 少し細くしてスッキリさせる */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 文字色の制御 */
+        .nav-logo, .nav-links a {
+            color: #ffffff; /* 最初は白 */
+            transition: color 0.3s;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* スクロール後は文字をダークグレーにして読みやすく */
+        nav.scrolled .nav-logo,
+        nav.scrolled .nav-links a {
+            color: #334155; 
+            text-shadow: none;
+        }
+
+        nav.scrolled .nav-links a:hover {
+            color: var(--main-color);
         }
 
         /* ロゴとリンクの文字色を白に変更 */
@@ -434,6 +461,17 @@
             interval: 200 
         });
         ScrollReveal().reveal('.slider-container', { delay: 400, duration: 1200 });
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            // 画面の高さ（100vh）の半分くらいスクロールしたら色を変える
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
 </html>

@@ -34,17 +34,17 @@
 
         /* ナビゲーション */
         nav {
-            background: transparent; /* 背景を透明に */
-            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.1); /* ほんの少し白を混ぜて高級感を */
+            backdrop-filter: blur(8px); /* すりガラス効果 */
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: absolute; /* 写真の上に配置 */
+            position: fixed; /* スクロールしてもついてくるように変更 */
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            box-shadow: none; /* 影を消して一体化 */
         }
 
         /* ロゴとリンクの文字色を白に変更 */
@@ -73,16 +73,22 @@
 
         /* 1. ヘッダー全体：背景画像を設定 */
         .profile-header {
+            height: 100vh; /* 画面の高さいっぱい */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 垂直方向に中央揃え */
+            align-items: center; /* 水平方向に中央揃え */
             text-align: center;
-            padding: 12rem 2rem 8rem; /* 高さを出して画像を見せる */
-            /* 画像の上に半透明の黒を重ねて、白い文字を読みやすくします */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/sea.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* スクロール時に画像が固定されるオシャレ効果 */
+            
+            /* 背景画像の設定 */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/image_765cf6.jpg');
+            background-size: cover; /* 隙間なく埋める（はみ出た分は切り取られる） */
+            background-position: center 60%; /* 縦長写真なので、少し下めを中央にするとバランスが良いです */
+            background-attachment: fixed;
+            
             color: #ffffff;
-            margin-bottom: 0;
-            border-bottom: none;
+            margin: 0;
+            padding: 0; /* Flexboxで中央寄せにするのでpaddingは不要に */
         }
 
         /* 2. 名前：白文字にして影をつける */
@@ -245,8 +251,11 @@
     </nav>
 
     <header class="profile-header">
-        <h1>安川 雄揮</h1>
-        <p class="affiliation">大阪大学大学院 情報科学研究科<br>小泉研究室</p>
+        <h1 style="margin-bottom: 0.5rem;">安川 雄揮</h1>
+        <p class="affiliation" style="margin: 0; line-height: 1.8;">
+            大阪大学大学院 情報科学研究科<br>
+            小泉研究室
+        </p>
     </header>
 
     <div class="slider-container">

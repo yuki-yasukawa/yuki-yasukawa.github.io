@@ -261,6 +261,40 @@
 
         .prev-btn { left: 10px; }
         .next-btn { right: 10px; }
+
+        @media (max-width: 600px) {
+            /* 1. 背景写真の位置を調整 */
+            .profile-header {
+                height: 100vh; /* スマホでも全画面を維持 */
+                background-position: center bottom; /* 写真の下側（海と水平線）を基準に配置 */
+                background-attachment: scroll; /* スマホでのカクつき防止のため固定を解除 */
+            }
+
+            /* 2. 名前のサイズをスマホに最適化 */
+            .profile-header h1 {
+                font-size: 2.5rem; /* 少し小さくしてバランスを整える */
+            }
+
+            /* 3. 消えていたナビゲーションを表示させる */
+            .nav-links {
+                display: flex !important; /* display: none を上書き */
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem; /* 文字を小さくして横に並ぶように */
+                margin-left: 5px;
+            }
+
+            .nav-logo {
+                font-size: 1rem; /* ロゴも少し小さく */
+            }
+            
+            nav {
+                padding: 1rem 1rem; /* 左右の余白を詰める */
+            }
+        }
+        
     </style>
 </head>
 <body>
